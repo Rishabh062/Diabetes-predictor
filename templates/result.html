@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <!-- Website Title -->
+    <div class="container">
+        <h2 class="container-heading"><span class="heading-font">Diabetes Predictor</span></h2>
+        <div class="description">
+            <br>
+            <p>A Machine Learning based Diabetes Prediction Web App.</p>
+        </div>
+    </div>
+
+    <!-- Result -->
+    <div class="results">
+        {% if prediction==1 %}
+            <h1>Prediction: <span class='danger'>Ohh No! You have DIABETES.</span></h1>
+            <img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
+        {% elif prediction==0 %}
+            <h1>Prediction: <span class='safe'>Awesome! You DON'T have diabetes.</span></h1>
+            <img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
+        {% endif %}
+    </div>
+    
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="contact">
+            <a href="https://www.linkedin.com/in/rishabh-dwivedi-28737b1a0" target="_blank"><i
+                    class='bx bxl-linkedin contact-icon'></i></a>
+            <a href="https://github.com/Rishabh062" target="_blank"><i
+                    class='bx bxl-github contact-icon'></i></a>
+            <a href="https://twitter.com/Rishabh07147212" target="_blank"><i
+                    class='bx bxl-twitter contact-icon'></i></a>
+
+        </div>
+        <p class="footer-description">Made with ❤️ by Rishabh Dwivedi </p>
+    </div>
+
+
+</body>
+
+</html>
